@@ -50,6 +50,14 @@ class CitiesControllerTest {
     }
 
     @Test
+    void findCities2() {
+        var cities = restTemplate.getForObject(appPath, Cities.class);
+
+        assertThat(cities.getCities(), hasSize(8));
+        assertThat(cities.getCities(), containsInRelativeOrder(this.c1, this.c2, this.c3));
+    }
+
+    @Test
     void findCity() {
         var city = this.restTemplate.getForObject(appPath + "/1/", City.class);
 
@@ -59,4 +67,5 @@ class CitiesControllerTest {
         );
 
     }
+
 }

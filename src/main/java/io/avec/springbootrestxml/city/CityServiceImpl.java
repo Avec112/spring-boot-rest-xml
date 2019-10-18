@@ -21,10 +21,7 @@ public class CityServiceImpl implements CityService {
     public Cities findAll() {
 
         var cities = (List<City>) repository.findAll();
-        var mycities = new Cities();
-        mycities.setCities(cities);
-
-        return mycities;
+        return new Cities(cities);
     }
 
     @Override

@@ -3,11 +3,11 @@ package io.avec.springbootrestxml.city;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,6 +15,7 @@ import java.util.List;
  */
 @Getter // Lombok
 @Setter // Lombok
+@AllArgsConstructor
 @JacksonXmlRootElement
 public class Cities implements Serializable {
 
@@ -22,6 +23,6 @@ public class Cities implements Serializable {
 
     @JacksonXmlProperty(localName = "City")
     @JacksonXmlElementWrapper(useWrapping = false)
-    private List<City> cities = new ArrayList<>();
+    private List<City> cities;
 
 }

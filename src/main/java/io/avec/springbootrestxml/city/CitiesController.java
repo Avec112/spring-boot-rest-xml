@@ -17,7 +17,7 @@ public class CitiesController {
         this.cityService = cityService;
     }
 
-    @RequestMapping(value="/cities", produces= MediaType.APPLICATION_XML_VALUE)
+    @RequestMapping(value="/cities", produces= {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Cities findCities() {
 
         return cityService.findAll();
