@@ -1,0 +1,19 @@
+server:
+  port: 8086
+  servlet:
+    context-path: /rest
+
+spring:
+  main:
+    banner-mode: "off"
+# H2 is default when found on classpath it seems and syntax is no more valid. I will not use any time here.
+#jpa:
+#  database: h2
+#  hibernate:
+#  dialect: org.hibernate.dialect.H2Dialect
+#  ddl-auto: create-drop
+
+logging:
+  level:
+    org:
+      springframework: ERROR
